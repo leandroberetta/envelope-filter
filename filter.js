@@ -47,7 +47,7 @@ function toggleOnOff() {
 			}
 		}).then((stream) => {
 			// Default values
-			var minFreq = 125;
+			var range = 125;
 			var sens = 0.55;
 			const MIN_RMS = 0.005;
 
@@ -75,8 +75,8 @@ function toggleOnOff() {
 			document.getElementById('q-value').addEventListener('input', function () {
 				filterNode.Q.setValueAtTime(this.value, audioContext.currentTime);
 			});
-			document.getElementById('decay-value').addEventListener('input', function () {
-				minFreq = this.value;
+			document.getElementById('range-value').addEventListener('input', function () {
+				range = this.value;
 			});
 			document.getElementById('mix-value').addEventListener('input', function () {
 				dryNode.gain.setValueAtTime((100 - this.value) / 100, audioContext.currentTime);
@@ -101,8 +101,8 @@ function toggleOnOff() {
 						}, 0) / dataArray.length
 					);
 
-					// Get a new cut off frequency based on the envelope and the sensibility
-					newFreq = rms * minFreq / MIN_RMS * sens;
+					// Get a new cutoff frequency based on the envelope and the sensibility
+					newFreq = rms * range / MIN_RMS * sens;
 
 					filterNode.frequency.setValueAtTime(newFreq, audioContext.currentTime);
 
