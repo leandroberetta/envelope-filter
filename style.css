@@ -50,7 +50,7 @@ h5 {
     width: 25px;
     height: 25px;
     border-radius: 50%; 
-    background: #04AA6D;
+    background: #324376;
     cursor: pointer;
   }
   
@@ -58,7 +58,7 @@ h5 {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #04AA6D;
+    background: #324376;
     cursor: pointer;
   }
 
@@ -105,11 +105,11 @@ h5 {
 }
 
 input:checked+.toggle {
-    background-color: #04AA6D;
+    background-color: #324376;
 }
 
 input:focus+.toggle {
-    box-shadow: 0 0 1px #04AA6D;
+    box-shadow: 0 0 1px #324376;
 }
 
 input:checked+.toggle:before {
@@ -138,4 +138,8 @@ input:checked+.toggle:before {
 .dry-wet-container {
     display: flex;
     justify-content: space-between;
+}
+
+.dry-wet-container h3 {
+    margin-top: 0;
 }
